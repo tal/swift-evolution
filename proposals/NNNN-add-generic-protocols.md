@@ -1,4 +1,4 @@
-# Feature name
+# Generic Protocols
 
 * Proposal: [SE-NNNN](https://github.com/apple/swift-evolution/proposals/NNNN-add-generic-protocols.md)
 * Author(s): [Tal Atlas](https://github.com/tal)
