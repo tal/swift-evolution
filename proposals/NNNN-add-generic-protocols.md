@@ -173,3 +173,7 @@ The problem with this is that it breaks the encapsulation of the type with an
 abundance of unenclosed spaces. It also does not allow for limitations to be
 defined by the protocol definition and is a departure from the way generics
 are implemented elsewhere in the language.
+
+## Related reading:
+
+- [Swift Associated Types by Russ Bishop](http://www.russbishop.net/swift-associated-types)
