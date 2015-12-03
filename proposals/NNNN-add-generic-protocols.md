@@ -46,8 +46,10 @@ func handleValidator<T: Validator where T.TypeToValidate == String>(validator: T
 Allowing a type which fully describes the useable API of a specifically defined
 protocol is consistent with what's available within other parts of the language.
 
-Currently the following example is impossible, but allowing it would allow for an
-even more expressive type system:
+The following example does not compile – this makes sense because `V` is a single
+type, meaning we can’t return multiple different types from the function. But
+Swift currently lacks a way for a function’s signature to specify that it can
+return _any_ type that conforms to `Validator where Validator.ValidatedType == String`
 
 ```swift
 protocol Validator {
