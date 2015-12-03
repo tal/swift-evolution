@@ -43,8 +43,32 @@ func handleValidator<T: Validator where T.TypeToValidate == String>(validator: T
 }
 ```
 
-To allow a type which fully describes the useable API of a specifically defined
+Allowing a type which fully describes the useable API of a specifically defined
 protocol is consistent with what's available within other parts of the language.
+
+Currently the following example is impossible, but allowing it would allow for an
+even more expressive type system:
+
+```swift
+protocol Validator {
+    typealias ValidatedType
+
+    func isValid(object: ValidatedType) -> Bool
+}
+struct NonEmptyValidator: Validator {
+    func isValid(object: String) -> Bool {
+        return object.isEmpty
+    }
+}
+func stringValidator<V: Validator where V.ValidatedType == String>() -> V {
+    if someCondition {
+      return NonEmptyValidator()
+    }
+    else {
+      return SomeDifferentStringValidator()
+    }
+}
+```
 
 ## Proposed solution
 
