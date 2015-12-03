@@ -73,7 +73,7 @@ to limit the types accepted using inheritance and the `where` clause.
 To adapt an example from the swift documentation:
 
 ```swift
-protocol SequenceComparitor<FooType: SequenceType, BarType: SequenceType where T.Generator.Element: Equatable, T.Generator.Element == U.Generator.Element> {
+protocol SequenceComparitor<FooType: SequenceType, BarType: SequenceType where FooType.Generator.Element: Equatable, FooType.Generator.Element == BarType.Generator.Element> {
   var foo: FooType { get }
 }
 
